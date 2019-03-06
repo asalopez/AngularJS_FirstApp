@@ -1,0 +1,42 @@
+﻿<div class="card">
+    <!--Listado de posts-->
+    <h3> Post Lists </h3>
+
+    <!--Botón que limpia la tabla-->
+    <div>
+        <button class="btn btn-warning btn-md" ng-click="clearList()">Clear list!</button>
+        <!--<button class="btn btn-success btn-md" ng-if="!showForm" ng-click="displayForm()">Add post!</button>-->
+        <button class="btn btn-success btn-md" ng-if="!showForm" ng-click="displayForm()">Add post!</button>
+        <br />
+        <br />
+    </div>
+
+    <table ng-if="posts.length > 0" class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Body</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="post in posts | orderBy:'-'">
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.body }}</td>
+                <td>
+                    <button class='btn btn-primary btn-xs' ng-click="editPost(post.id)">Edit</button>
+                </td>
+                <td>
+                    <button class='btn btn-danger btn-xs' ng-click="removePost(post.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div ng-if="posts.length == 0">
+
+    </div>
+</div>
