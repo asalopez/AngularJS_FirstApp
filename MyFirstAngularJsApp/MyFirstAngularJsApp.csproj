@@ -116,7 +116,6 @@
     <Content Include="templates\footer.html" />
     <Content Include="templates\nav.html" />
     <Content Include="templates\page1.html" />
-    <Content Include="scripts\app\posts\controllers\posts.controller.js" />
     <Content Include="scripts\app\posts\services\localStorage.service.js" />
     <Content Include="templates\post.form.html" />
     <Content Include="templates\post.list.html" />
@@ -126,6 +125,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="css\" />
     <Folder Include="scripts\app\page1\services\" />
   </ItemGroup>
   <PropertyGroup>

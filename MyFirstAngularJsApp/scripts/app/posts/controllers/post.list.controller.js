@@ -29,9 +29,10 @@ function postListController($scope, $http, localStorageService, $route, $routePa
     };
 
     // Función que elimina un elemento de la lista
-    $scope.removePost = function (postId) {
-        console.log(postId);
-        $scope.posts = localStorageService.remove(postId);
+    $scope.removePost = function (id) {
+        console.log(id);
+        $scope.posts = localStorageService.remove(id);
+        //$scope.posts = localStorageService.removeByIndex(id);
     };
 
     // Función que pinta en el formulario el objeto indicado para su modificación
@@ -53,6 +54,5 @@ function postListController($scope, $http, localStorageService, $route, $routePa
         $scope.showForm = !$scope.showForm;
     };
 
-    $scope.reset();
 };
 

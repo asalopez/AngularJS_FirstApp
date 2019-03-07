@@ -30,17 +30,19 @@
     <script src="scripts/app/posts/services/localStorage.service.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
+    <!--Navegación-->
+    <div ng-include="'../../templates/nav.html'"></div>
 
-        <!--Navegación-->
-        <div ng-include="'../../templates/nav.html'"></div>
+    <!--Body--> 
+    <div class="container body-content">
 
         <!--View-->
         <ng-view></ng-view>
-
-        <!--Footer-->
-        <div ng-include="'../../templates/footer.html'"></div>
+        
     </div>
+
+    <!--Footer-->
+    <div ng-include="'../../templates/footer.html'"></div>
 
     <!--OLD VERSION--> 
     <!---

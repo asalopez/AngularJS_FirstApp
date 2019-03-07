@@ -1,12 +1,11 @@
-﻿<div class="card">
+﻿<div class="container-fluid">
     <!--Listado de posts-->
     <h3> Post Lists </h3>
 
     <!--Botón que limpia la tabla-->
     <div>
-        <button class="btn btn-warning btn-md" ng-click="clearList()">Clear list!</button>
-        <!--<button class="btn btn-success btn-md" ng-if="!showForm" ng-click="displayForm()">Add post!</button>-->
-        <button class="btn btn-success btn-md" ng-if="!showForm" ng-click="displayForm()">Add post!</button>
+        <button class="btn btn-warning btn-md" ng-show="posts.length > 0" ng-click="clearList()">Clear list!</button>
+        <a class="btn btn-success btn-md" ng-href="#!post/add">Add post!</a>
         <br />
         <br />
     </div>
@@ -27,9 +26,10 @@
                 <td>{{ post.title }}</td>
                 <td>{{ post.body }}</td>
                 <td>
-                    <button class='btn btn-primary btn-xs' ng-click="editPost(post.id)">Edit</button>
+                    <a class='btn btn-primary btn-xs' ng-href="#!/post/edit/{{post.id}}">Edit</a>
                 </td>
                 <td>
+                    <!--<button class='btn btn-danger btn-xs' ng-click="removePost($index)">Delete</button>-->
                     <button class='btn btn-danger btn-xs' ng-click="removePost(post.id)">Delete</button>
                 </td>
             </tr>
@@ -37,6 +37,6 @@
     </table>
 
     <div ng-if="posts.length == 0">
-
+        <h1>The list is empty!</h1>
     </div>
 </div>

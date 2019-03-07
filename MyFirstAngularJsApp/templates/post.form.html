@@ -1,24 +1,21 @@
 ﻿<div class="container-fluid">
-    <div class="card">
-        <h3> Post Form </h3>
-        <br />
-        <form novalidate class="simple-form" name="postForm">
-            <div class="form-group">
-                <label>Title</label>
-                <input type="text" class="form-control" name="title" ng-model="post.title" required />
-                <p ng-show="postForm.title.$dirty && !postForm.title.$valid">{{postForm.title.$error}}</p>
-            </div>
-            <div class="form-group">
-                <label>Body</label>
-                <textarea class="form-control" name="body" ng-model="post.body" required></textarea>
-                <p ng-show="postForm.body.$dirty && !postForm.body.$valid">{{postForm.body.$error}}</p>
-            </div>
-            <input type="button" class="btn btn-danger btn-md" ng-click="reset()" ng-disabled="postForm.$invalid" value="Reset" />
-            <input type="submit" class="btn btn-success btn-md" ng-click="submitPost(post)" ng-disabled="postForm.$invalid" value="Save" />
+    <h3> Post Form</h3>
+    <br />
+    <form novalidate class="simple-form" name="postForm">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" name="title" ng-model="post.title" required />
+            <!--<p ng-show="postForm.title.$dirty && !postForm.title.$valid">{{postForm.title.$error}}</p>-->
+        </div>
+        <div class="form-group">
+            <label>Body</label>
+            <textarea class="form-control" name="body" ng-model="post.body" required></textarea>
+            <!--<p ng-show="postForm.body.$dirty && !postForm.body.$valid">{{postForm.body.$error}}</p>-->
+        </div>
+        <input type="button" class="btn btn-danger btn-md" ng-click="reset()" ng-disabled="postForm.$invalid" value="Reset" />
+        <input type="submit" class="btn btn-success btn-md" ng-click="submitPost(post)" ng-disabled="postForm.$invalid" value="Save" />
 
-        </form>
+    </form>
 
-        <!--<pre>PostForm = {{post | json}}</pre>-->
-        <hr />
-    </div>
+    <!--<pre>PostForm = {{post | json}}</pre>-->
 </div>

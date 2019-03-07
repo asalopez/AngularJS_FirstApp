@@ -30,6 +30,11 @@
         return $localStorage[POSTS];
     };
 
+    // Elimina un elemento del array a partir de su índice: OJO si se usa el OrderBy en el listado (índice invertido)
+    this.removeByIndex = function removeByIndex(index) {
+        return $localStorage[POSTS].splice(index, 1);
+    }
+
     // Guarda un nuevo objeto en el LocalStorage
     this.savePost = function savePost(post) {
 
