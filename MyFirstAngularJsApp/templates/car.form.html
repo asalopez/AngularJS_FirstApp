@@ -1,0 +1,37 @@
+﻿<div class="container-fluid">
+    <h3> Car Form</h3>
+    <form novalidate class="simple-form" name="carForm">
+        <div class="form-group">
+            <label>Brand</label>
+            <input type="text" class="form-control" name="marca" ng-model="car.marca" required />
+            <!--<p ng-show="carForm.marca.$dirty && !carForm.marca.$valid">{{carForm.marca.$error}}</p>-->
+        </div>
+        <div class="form-group">
+            <label>Model</label>
+            <input type="text" class="form-control" name="modelo" ng-model="car.modelo" required />
+            <!--<p ng-show="carForm.modelo.$dirty && !carForm.modelo.$valid">{{carForm.modelo.$error}}</p>-->
+        </div>
+        <div class="form-group">
+            <label>License Number</label>
+            <input type="text" class="form-control" name="matricula" ng-model="car.matricula" required />
+            <!--<p ng-show="carForm.matricula.$dirty && !carForm.matricula.$valid">{{carForm.matricula.$error}}</p>-->
+        </div>
+        <div class="form-group">
+            <label>Color</label>
+            <input type="text" class="form-control" name="color" ng-model="car.color" required />
+            <!--<p ng-show="carForm.color.$dirty && !carForm.color.$valid">{{carForm.color.$error}}</p>-->
+        </div>
+        <div class="form-group">
+            <label>Model Date</label>
+            <input type="date" class="form-control" name="fechaModelo" ng-model="car.fechaModelo" required />
+            <!--<p ng-show="carForm.fechaModelo.$dirty && !carForm.fechaModelo.$valid">{{carForm.fechaModelo.$error}}</p>-->
+        </div>        
+
+        <a class="btn btn-primary btn-md" ng-href="#!car/list"><i class="fas fa-chevron-circle-left">&nbsp;&nbsp;</i>Go back</a>
+        <button type="button" class="btn btn-danger btn-md" ng-click="reset()" ng-disabled="carForm.$invalid" value="Reset"><i class="fas fa-eraser">&nbsp;&nbsp;</i>Reset</button>
+        <button type="button" class="btn btn-success btn-md" ng-click="submitForm(car)" ng-disabled="carForm.$invalid" value="Save"><i class="fas fa-save">&nbsp;&nbsp;</i>Save</button>
+
+    </form>
+
+    <!--<pre>PostForm = {{car | json}}</pre>-->
+</div>

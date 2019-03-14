@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\index.css" />
     <Content Include="index.html" />
     <Content Include="scripts\app\app.js" />
     <Content Include="packages.config" />
@@ -110,12 +111,17 @@
   <ItemGroup>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="scripts\app\page1\controllers\page1.controller.js" />
+    <Content Include="scripts\app\cars\controllers\car.form.controller.js" />
+    <Content Include="scripts\app\cars\controllers\car.list.controller.js" />
+    <Content Include="scripts\app\cars\services\car.service.js" />
     <Content Include="scripts\app\posts\controllers\post.form.controller.js" />
     <Content Include="scripts\app\posts\controllers\post.list.controller.js" />
+    <Content Include="scripts\app\utils\services\utils.pagination.service.js" />
+    <Content Include="scripts\app\utils\services\utils.rest.service.js" />
+    <Content Include="templates\car.form.html" />
     <Content Include="templates\footer.html" />
     <Content Include="templates\nav.html" />
-    <Content Include="templates\page1.html" />
+    <Content Include="templates\car.list.html" />
     <Content Include="scripts\app\posts\services\localStorage.service.js" />
     <Content Include="templates\post.form.html" />
     <Content Include="templates\post.list.html" />
@@ -124,10 +130,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="css\" />
-    <Folder Include="scripts\app\page1\services\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

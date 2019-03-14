@@ -6,6 +6,8 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 
     <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -25,9 +27,14 @@
     <!--Controladores-->
     <script src="scripts/app/posts/controllers/post.list.controller.js"></script>
     <script src="scripts/app/posts/controllers/post.form.controller.js"></script>
+    <script src="scripts/app/cars/controllers/car.list.controller.js"></script>
+    <script src="scripts/app/cars/controllers/car.form.controller.js"></script>
 
     <!--Servicios-->
     <script src="scripts/app/posts/services/localStorage.service.js"></script>
+    <script src="scripts/app/cars/services/car.service.js"></script>
+    <script src="scripts/app/utils/services/utils.rest.service.js"></script>
+    <script src="scripts/app/utils/services/utils.pagination.service.js"></script>
 </head>
 <body>
     <!--Navegación-->
@@ -44,79 +51,5 @@
     <!--Footer-->
     <div ng-include="'../../templates/footer.html'"></div>
 
-    <!--OLD VERSION--> 
-    <!---
-    <div ng-controller="postsController" class="container-fluid">
-
-        Routing:
-        <a ng-href="#!page1">Page1</a> |
-        <a href="#!page2">Page2</a> |
-        <a href="#!page3">Page3</a>
-
-        <ng-view></ng-view>
-
-        <div class="card">
-        
-            <div ng-show="showForm">
-                <h3> Post Form </h3>
-                <br />
-                <form novalidate class="simple-form" name="postForm">
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input type="text" class="form-control" name="title" ng-model="post.title" required />
-                        <p ng-show="postForm.title.$dirty && !postForm.title.$valid">{{postForm.title.$error}}</p>
-                    </div>
-                    <div class="form-group">
-                        <label>Body</label>
-                        <textarea class="form-control" name="body" ng-model="post.body" required></textarea>
-                        <p ng-show="postForm.body.$dirty && !postForm.body.$valid">{{postForm.body.$error}}</p>
-                    </div>
-                    <input type="button" class="btn btn-secondary btn-md" ng-click="displayForm()" value="Hide" />
-                    <input type="button" class="btn btn-danger btn-md" ng-click="reset()" ng-disabled="postForm.$invalid" value="Reset" />
-                    <input type="submit" class="btn btn-success btn-md" ng-click="submitPost(post)" ng-disabled="postForm.$invalid" value="Save" />
-
-                </form>
-
-                <pre>PostForm = {{post | json}}</pre>
-                <hr />
-            </div>
-
-
-            <h3> Post Lists </h3>
-
-            <div>
-                <button class="btn btn-warning btn-md" ng-click="clearList()">Clear list!</button>
-                <button class="btn btn-success btn-md" ng-if="!showForm" ng-click="displayForm()">Add post!</button>
-                <br />
-                <br />
-            </div>
-
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Body</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="post in posts | orderBy:'-'">
-                        <td>{{ post.id }}</td>
-                        <td>{{ post.title }}</td>
-                        <td>{{ post.body }}</td>
-                        <td>
-                            <button class='btn btn-primary btn-xs' ng-click="editPost(post.id)">Edit</button>
-                        </td>
-                        <td>
-                            <button class='btn btn-danger btn-xs' ng-click="removePost(post.id)">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    -->
 </body>
 </html>

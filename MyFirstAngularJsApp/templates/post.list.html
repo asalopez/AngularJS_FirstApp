@@ -1,6 +1,6 @@
 ﻿<div class="container-fluid">
     <!--Listado de posts-->
-    <h3> Post Lists </h3>
+    <h3> Post List </h3>
 
     <!--Botón que limpia la tabla-->
     <div>
@@ -25,10 +25,10 @@
                 <td>{{ post.id }}</td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.body }}</td>
-                <td>
+                <td class="text-center">
                     <a class='btn btn-primary btn-xs' ng-href="#!/post/edit/{{post.id}}">Edit</a>
                 </td>
-                <td>
+                <td class="text-center">
                     <!--<button class='btn btn-danger btn-xs' ng-click="removePost($index)">Delete</button>-->
                     <button class='btn btn-danger btn-xs' ng-click="removePost(post.id)">Delete</button>
                 </td>

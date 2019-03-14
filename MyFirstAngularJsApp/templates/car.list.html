@@ -1,0 +1,57 @@
+﻿<div class="container-fluid">
+    <!--Listado de posts-->
+    <h3 class="testAlv"> Cars List </h3>
+
+    <!--Botón que limpia la tabla-->
+    <div>
+        <!--<button class="btn btn-warning btn-md" ng-show="cars.length > 0" ng-click="clearList()">Clear list!</button>-->
+        <a class="btn btn-success btn-md" ng-href="#!car/add"><i class="fas fa-plus-square">&nbsp;&nbsp;</i>Add new car !</a>
+        <br />
+        <br />
+    </div>
+
+    <!--Tabla-->
+    <table ng-if="cars.length > 0" class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">License number</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Model</th>
+                <th scope="col">Color</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="car in carsView">
+                <td>{{ car.CarId }}</td>
+                <td>{{ car.Matricula }}</td>
+                <td>{{ car.Marca }}</td>
+                <td>{{ car.Modelo }}</td>
+                <td>{{ car.Color }}</td>
+                <td>{{ car.FechaModelo | date:"dd/MM/yyyy" }}</td>
+                <td class="text-center">
+                    <a class='btn btn-primary btn-xs' ng-href="#!/car/edit/{{car.CarId}}"><i class="fas fa-edit"></i></a>
+                </td>
+                <td class="text-center">
+                    <button class='btn btn-danger btn-xs' ng-click="removeCar(car.CarId)"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!--Paginación--> 
+    <div class="text-center">
+        <ul class="pagination">
+            <li ng-repeat="pag in gridCarsPagination" ng-class="{active: pag.disabled}">
+                <a href="" ng-show="pag.show" ng-click="getCarsPaginated(pag.page)" tabindex="-1">{{pag.page}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-if="cars.length == 0">
+        <h1>The list is empty!</h1>
+    </div>
+</div>

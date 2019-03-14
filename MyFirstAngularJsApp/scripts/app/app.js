@@ -2,7 +2,7 @@
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-        .when('/list', {
+        .when('/post/list', {
             templateUrl: '../../templates/post.list.html',
             controller: 'postListController'
         })
@@ -14,12 +14,20 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '../../templates/post.form.html',
             controller: 'postFormController'
         })
-        .when('/page1', {
-            templateUrl: '../../templates/page1.html',
-            controller: 'page1Controller'
+        .when('/car/list', {
+            templateUrl: '../../templates/car.list.html',
+            controller: 'carListController'
+        })
+        .when('/car/add', {
+            templateUrl: '../../templates/car.form.html',
+            controller: 'carFormController'
+        })
+        .when('/car/edit/:id', {
+            templateUrl: '../../templates/car.form.html',
+            controller: 'carFormController'
         })
         .otherwise({
-            redirectTo: '/list'
+            redirectTo: '/post/list'
         });
 
     // enable html5Mode for pushstate ('#'-less URLs)

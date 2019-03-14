@@ -26,7 +26,7 @@ function postFormController($scope, $http, $location, $routeParams, localStorage
         $scope.reset();
 
         // Back to el listado de posts
-        $location.path('/list');
+        $location.path('/post/list');
     };
 
     // Función que limpia el objeto informado en el form
